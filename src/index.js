@@ -7,9 +7,10 @@ function App() {
         <div className="recording-indicator">
             <div className="circle-outer">
                 <div className="circle-inner">
-                    <p>I'm Listening...</p>
+                    
                 </div>
             </div>
+            <p>I'm Listening..</p> 
         </div>
     );
 }
