@@ -1,22 +1,23 @@
-import React from "react";
-import "./style.css";
+import React, { useState } from 'react';
+import './style.css'; // Make sure the path is correct for your CSS file
 
-export const GradientCircle = () => {
-  return <div className="gradient-circle" />;
-};
+const RecordingIndicator = () => {
+  // State to track whether recording is in progress
+  const [isRecording, setIsRecording] = useState(false);
 
-export const GetToKnowYouPage = () => {
+  // Function to toggle recording state
+  const toggleRecording = () => {
+    setIsRecording(!isRecording);
+  };
+
+  // Class name conditional on the isRecording state
+  const indicatorClasses = `recording-indicator ${isRecording ? 'recording' : ''}`;
+
   return (
-    <div className="get-to-know-you-page">
-      <div className="div">
-        <p className="text-wrapper">Tell me about the best day of your life...</p>
-        <div className="recording-button">
-          <div className="recording-in-process">
-            <div className="ellipse" />
-          </div>
-        </div>
-        <div className="text-wrapper-2">Start</div>
-      </div>
+    <div className={indicatorClasses} onClick={toggleRecording}>
+      {/* ... Other elements inside your recording indicator ... */}
     </div>
   );
 };
+
+export default RecordingIndicator;
